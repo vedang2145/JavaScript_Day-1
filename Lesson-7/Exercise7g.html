@@ -9,8 +9,7 @@
         } else if (from === 'miles' && to === 'km') {
           return `${length * 1.6} km`;
 
-        // You can also do if (from === 'km' && to === 'km) { ... }
-        // if (from === to) is a trick you can use to save some code.
+        
         } else if (from === to) {
           return `${length} ${to}`;
         }

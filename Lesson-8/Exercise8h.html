@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <title>Exercise8h</title>
+  </head>
   <body>
+    
     <p>
       <button onclick="
         updateCalculation('1');
@@ -66,9 +69,11 @@
       ">.</button>
 
       <button onclick="
-       
+        
         calculation = eval(calculation);
         console.log(calculation);
+
+        localStorage.setItem('calculation', calculation);
       ">=</button>
 
       <button onclick="
@@ -80,15 +85,22 @@
       <button onclick="
         calculation = '';
         console.log(calculation);
+
+        localStorage.setItem('calculation', calculation);
       ">Clear</button>
     </p>
 
     <script>
-      let calculation = '';
+      let calculation = localStorage.getItem('calculation') || '';
 
       function updateCalculation(value) {
         calculation += value;
         console.log(calculation);
+        localStorage.setItem('calculation', calculation);
+      }
+
+      function saveCalculation() {
+        localStorage.setItem('calculation', calculation);
       }
     </script>
   </body>
